@@ -3,33 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xendal Hub</title> <!-- Cambié el título de la página -->
+  <title>Xendal Hub</title> 
 </head>
 <body>
   <h1>Redirecting...</h1>
-  <p>If you are not redirected automatically, <a href="#" id="manualLink">click here</a>.</p> <!-- Traducción al inglés -->
+  <p>If you are not redirected automatically, <a href="#" id="manualLink">click here</a>.</p> 
 
   <script>
-    // Get URL parameters
+
     const urlParams = new URLSearchParams(window.location.search);
     const placeId = urlParams.get('placeId');
     const gameInstanceId = urlParams.get('gameInstanceId');
 
-    // If required parameters are not found, show an error message
     if (!placeId || !gameInstanceId) {
       document.body.innerHTML = "<h1>Set: therealroier.github.io/zz/?placeId=109983668079237&gameInstanceId=JOB_ID to join the game.</h1>";
     } else {
-      // Roblox URL redirection using roblox://
+
       const robloxUrl = `roblox://experiences/start?placeId=${placeId}&gameInstanceId=${gameInstanceId}`;
 
-      // Try to redirect the user to the Roblox client using the roblox:// link
       window.location.href = robloxUrl;
-
-      // Fallback link if Roblox client is not installed
+      
       setTimeout(() => {
         document.getElementById('manualLink').href = `https://www.roblox.com/games/${placeId}`;
         document.body.innerHTML = "<h1>Gay.</h1>"; <!-- Cambiado a "Gay" según lo que pediste -->
-      }, 2000); // Wait 2 seconds before showing the manual link
+      }, 2000); 
     }
   </script>
 </body>
